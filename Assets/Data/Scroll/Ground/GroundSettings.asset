@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74965a847a99ab04088958232adc5068, type: 3}
+  m_Name: GroundSettings
+  m_EditorClassIdentifier: Assembly-CSharp::GroundSettingsSo
+  chunkWidth: 20
+  activeChunkCount: 3
+  firstChunk: {fileID: 11400000, guid: 573ce9683304b8f499f5a4a05c7f93da, type: 2}
+  chunkVariants:
+  - {fileID: 11400000, guid: 573ce9683304b8f499f5a4a05c7f93da, type: 2}
+  - {fileID: 11400000, guid: f706381b407b1804ea48b4d453bd84d1, type: 2}
