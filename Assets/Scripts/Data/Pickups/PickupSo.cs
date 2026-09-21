@@ -4,6 +4,8 @@ using UnityEngine;
 public class PickupDataSo : ScriptableObject
 {
     [SerializeField] private int scoreValue = 5;
+    [SerializeField] private ParticleSystem collectEffect;
 
     public int GetScoreValue() => scoreValue;
+    public ParticleSystem GetCollectEffect() => collectEffect;
 }

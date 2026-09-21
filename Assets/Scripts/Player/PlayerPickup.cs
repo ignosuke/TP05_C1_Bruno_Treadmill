@@ -14,7 +14,7 @@ public class PlayerPickup : MonoBehaviour
         if (!other.TryGetComponent<Pickup>(out Pickup pickup)) return;
 
         OnPickedUp?.Invoke(pickup.GetScoreValue());
-        Destroy(other.gameObject);
+        pickup.Collect();
     }
 
     private bool IsInLayerMask(int layer, LayerMask mask)

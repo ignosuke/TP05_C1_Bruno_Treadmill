@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: CoinData
   m_EditorClassIdentifier: Assembly-CSharp::PickupDataSo
   scoreValue: 5
+  collectEffect: {fileID: 2631838588021059833, guid: 494a53582c879a94a9d1892ecb49ba8d, type: 3}

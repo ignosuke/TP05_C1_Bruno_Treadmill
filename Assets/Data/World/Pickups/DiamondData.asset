@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: DiamondData
   m_EditorClassIdentifier: Assembly-CSharp::PickupDataSo
   scoreValue: 50
+  collectEffect: {fileID: 7728482413939914734, guid: fbfec80ecbcc2dc4e8d70adc586e852d, type: 3}
