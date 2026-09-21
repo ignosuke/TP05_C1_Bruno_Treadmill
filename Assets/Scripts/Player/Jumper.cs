@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Jumper : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class Jumper : MonoBehaviour
     private bool jumpRequested;
     private bool jumpCutRequested;
 
+    private PlayerDeath playerDeath;
+    private bool isDead;
+
     void Awake()
     {
         jumpKey = playerData.GetJumpKey();
@@ -28,14 +32,28 @@ public class Jumper : MonoBehaviour
         heavyFallThreshold = playerData.GetHeavyFallThreshold();
 
         rb = GetComponent<Rigidbody2D>();
+        playerDeath = GetComponent<PlayerDeath>();
+    }
+
+    private void OnEnable()
+    {
+        playerDeath.OnDied += HandleDeath;
+    }
+
+    private void OnDisable()
+    {
+        playerDeath.OnDied -= HandleDeath;
     }
 
     private void Update()
     {
-        // GetKeyDown y GetKeyUp se resetean por frame de render: hay que leerlos aca, no en FixedUpdate
-        if (Input.GetKeyDown(jumpKey))
+        if (isDead) return;
+
+        // Evita que se solicite un salto mientras esta el menu de pausa
+        if (Input.GetKeyDown(jumpKey) && !EventSystem.current.IsPointerOverGameObject())
             jumpRequested = true;
 
+        // No tiene el filtro de GetKeyDown porque se tiene que poder cortar el salto al pausar en el aire
         if (Input.GetKeyUp(jumpKey))
             jumpCutRequested = true;
     }
@@ -89,5 +107,10 @@ public class Jumper : MonoBehaviour
             rb.gravityScale = fallGravity;
         else
             rb.gravityScale = heavyFallGravity;
+    }
+
+    private void HandleDeath()
+    {
+        isDead = true;
     }
 }

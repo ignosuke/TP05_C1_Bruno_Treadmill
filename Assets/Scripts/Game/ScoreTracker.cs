@@ -9,6 +9,7 @@ public class ScoreTracker : MonoBehaviour
 
     public event Action<int> OnScoreChanged;
 
+    private float elapsedTime = 0f;
     private float rawScore; // Se acumula en float para no perder las fracciones de distancia
     private bool isRunning = true;
 
@@ -26,10 +27,11 @@ public class ScoreTracker : MonoBehaviour
     {
         if (!isRunning) return;
 
-        // El puntaje por distancia usa la velocidad de scroll: si acelera, suma mas rapido
+        elapsedTime += Time.deltaTime;
+
+        // El puntaje por distancia usa la velocidad de scroll, si acelera, suma mas rapido
         AddRaw(scrollSettings.GetSpeed() * pointsPerUnit * Time.deltaTime);
     }
-
     public void Stop()
     {
         isRunning = false;
@@ -42,7 +44,6 @@ public class ScoreTracker : MonoBehaviour
 
     private void AddPoints(int points)
     {
-        Debug.Log($"+{points} points!");
         AddRaw(points);
     }
 
@@ -55,4 +56,6 @@ public class ScoreTracker : MonoBehaviour
         if (GetScore() != previousScore)
             OnScoreChanged?.Invoke(GetScore());
     }
+
+    public float GetElapsedTime() => elapsedTime;
 }
