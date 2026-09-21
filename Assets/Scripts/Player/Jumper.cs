@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -19,6 +20,8 @@ public class Jumper : MonoBehaviour
 
     private PlayerDeath playerDeath;
     private bool isDead;
+
+    public event Action OnJumped;
 
     void Awake()
     {
@@ -83,6 +86,7 @@ public class Jumper : MonoBehaviour
     private void Jump()
     {
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        OnJumped?.Invoke();
     }
 
     // Al soltar la tecla durante la subida se corta parte de la velocidad: tap = salto bajo, hold = salto completo
