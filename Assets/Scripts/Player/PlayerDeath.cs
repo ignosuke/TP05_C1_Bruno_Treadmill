@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class Death : MonoBehaviour
+public class PlayerDeath : MonoBehaviour
 {
     [SerializeField] private LayerMask lethalLayer;
 

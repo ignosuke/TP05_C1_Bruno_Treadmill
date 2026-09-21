@@ -2,10 +2,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private Death playerDeath;
+    [SerializeField] private PlayerDeath playerDeath;
+    private ScoreTracker scoreTracker;
 
     private void Awake()
     {
+        scoreTracker = GetComponent<ScoreTracker>();
+
         Time.timeScale = 1f;
     }
 
@@ -21,7 +24,10 @@ public class GameManager : MonoBehaviour
 
     private void HandlePlayerDied()
     {
+        scoreTracker.Stop();
+
+        Debug.Log($"Game over. Score: {scoreTracker.GetScore()}");
+
         Time.timeScale = 0f; // Provisorio
-        Debug.Log("Game over");
     }
 }

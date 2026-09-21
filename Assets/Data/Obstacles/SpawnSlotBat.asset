@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7194712e0aabd5a4eae12e5bbbd6d675, type: 3}
   m_Name: SpawnSlotBat
   m_EditorClassIdentifier: Assembly-CSharp::SpawnSlotSo
-  spawnChance: 0.35
+  spawnChance: 0.2
   candidates:
   - {fileID: 6957249514940477900, guid: 164c9215abf974047a95a4761db2b2fb, type: 3}

@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 261099750}
   - component: {fileID: 261099749}
   - component: {fileID: 261099752}
+  - component: {fileID: 261099753}
   - component: {fileID: 261099748}
   - component: {fileID: 261099747}
   - component: {fileID: 261099751}
@@ -383,6 +384,21 @@ MonoBehaviour:
   lethalLayer:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &261099753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261099745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e4cc70ba8c2d9e4cb210090661d8308, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerPickup
+  pickupLayers:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,6 +710,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1832100522}
   - component: {fileID: 1832100521}
+  - component: {fileID: 1832100523}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -729,6 +746,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1832100523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832100520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e948fd548b2b8e42a7aded4a0b25810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreTracker
+  playerPickup: {fileID: 0}
+  scrollSettings: {fileID: 0}
+  pointsPerUnit: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
